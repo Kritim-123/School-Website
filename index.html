@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People's Friendship Academy</title>
+    <link rel="stylesheet" href="main.css">
+    
+</head>
+<body>
+    <div class="header">
+        <p>Admission is open. Grab a seat now.
+            <i class="arrow-right"></i>
+        </p>
+    </div>
+
+    <div class="navigation">
+        <img src="images/logo.png" alt="logo" width="70" height="60">
+        
+        <ul class="nav-section">
+            <li class="home">Home</li>
+            <li class="admission">Admission</li>
+            <li class="gallery">Gallery</li>
+            <li class="Contact">Contact</li>
+        </ul>
+    </div>
+
+    <div class="information">
+
+        <div class="left-side"> 
+            <div class="join-us">Join our Family.</div>
+        </div>
+        
+        <div class="right-side">
+            <div class="slogan">Learn to Live and to Lead</div>
+            <div class="description">Best school in Town.</div>
+        </div>
+       
+    </div>
+
+    <div class="photos">
+        <img class="image" src="images/dancegroup.jpeg" alt="dancegroup" width="800" height="600">
+        <img class="image" src="images/dancephoto.jpeg" alt="dancephoto" width="800" height="600">
+        <img class="image" src="images/groundphoto.jpeg" alt="groundphoto" width="800" height="600">
+        <img class="image" src="images/picninc.jpeg" alt="picnic" width="800" height="600">
+        <img class="image" src="images/tribhuwantour.jpeg" alt="tribhuwantour" width="800" height="600">
+        <img class="image" src="images/winners.jpeg" alt="winners" width="800" height="600">
+
+        <div class="buttons">
+            <button class="button" onclick="prevImage()">&#8592;</button>
+            <button class="button" onclick="nextImage()">&#8594;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.image');
+      
+        function showImage(index) {
+          // Hide all images
+          images.forEach(image => {
+            image.style.display = 'none';
+          });
+      
+          // Show the image at the specified index
+          images[index].style.display = 'block';
+        }
+      
+        function nextImage() {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          showImage(currentImageIndex);
+        }
+      
+        function prevImage() {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          showImage(currentImageIndex);
+        }
+      
+        // Show the first image initially
+        showImage(currentImageIndex);
+      </script>
+
+      <div class="more-info">
+        <div id="Location">Location: Swaymbhu, kathmandu</div>
+        <div id="contact-info">Phone Number: 9793267534</div>
+      </div>
+
+
+</body>
+</html>
